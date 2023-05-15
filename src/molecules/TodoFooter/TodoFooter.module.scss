@@ -1,0 +1,23 @@
+.todoFooter {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.todoFooter {
+		flex-direction: column;
+    align-items: center;
+	}
+}
+
+.totalCount {
+	color: grey;
+	font-size: 14px;
+}
+
+.buttonsContainer {
+	> * {
+		margin: 0 10px;
+	}
+}

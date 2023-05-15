@@ -1,0 +1,19 @@
+.task {
+  margin-left: 10px;
+  cursor: pointer;
+
+  &.completed {
+    text-decoration: line-through;
+    color: lightgray;
+  }
+}
+
+.deleteIcon {
+  margin-left: auto;
+  cursor: pointer;
+  color: grey;
+
+  &:hover {
+    color: black;
+  }
+}
