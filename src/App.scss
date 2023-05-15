@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(to bottom, #e983dd80, #579ebfcc), url('../public/images/header.jpg');
-  height: 35vh;
+  height: 280px;
   background-size: cover;
   opacity: 0.9;
 }
@@ -27,6 +27,18 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 3rem 0;
+}
+
+@media (max-width: 768px) {
+  .todo-container {
+    width: 90vw;
+  }
+
+  .row {
+    &.footer {
+      flex-direction: column;
+    }
+  }
 }
 
 .todo-header {
@@ -109,11 +121,14 @@ input[type=text] {
   &:last-of-type {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    justify-content: space-between;
   }
 
   &:not(:last-of-type) {
     border-bottom: 1px solid rgb(225, 223, 223);
+  }
+
+  &.footer {
+    justify-content: space-between;
   }
 }
 

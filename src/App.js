@@ -38,7 +38,7 @@ function App() {
             <input type='checkbox' className='custom-checkbox ' />
             <span className='task'>Cook a dinner for family</span>
           </div>
-          <div className='row'>
+          <div className='row footer'>
             <span className='total-count'>4 items left</span>
             <div className='buttons-container'>
               <button className='button-link active'>All</button>
