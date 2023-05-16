@@ -4,7 +4,17 @@ import TodoFooter from "../../molecules/TodoFooter/TodoFooter";
 import Card from "../../organisms/Card/Card";
 import styles from "./TodoTemplate.module.scss";
 
-const TodoTemplate = ({ tasks }) => {
+const TodoTemplate = ({ tasks, onAddTask }) => {
+	const addNewTask = (description) => {
+		const newTask = {
+			id: Date(),
+			description,
+			completed: false
+		};
+
+		onAddTask(newTask);
+	};
+
 	return (
 		<div className={styles.todoContainer}>
 			<section className={styles.todoSection}>
@@ -13,7 +23,7 @@ const TodoTemplate = ({ tasks }) => {
 				</header>
 
 				<Card>
-					<TaskInput />
+					<TaskInput onEnterTask={addNewTask} />
 				</Card>
 
 				<Card>

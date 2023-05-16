@@ -11,6 +11,7 @@ const TaskItem = ({ task }) => {
 		<div>
 			{/* doesn't work because state is not updated */}
 			<CheckBoxInput checked={task.completed} />
+			{/* fix big task names */}
 			<span className={taskClasses}>{task.description}</span>
 			<ClearIcon className={styles.deleteIcon} />
 		</div>

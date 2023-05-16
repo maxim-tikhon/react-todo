@@ -1,11 +1,10 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import todoReducer from "./todoSlice";
 
-const rootReducer = combineReducers({
-
+const store = configureStore({
+  reducer: {
+    todo: todoReducer
+  }
 });
 
-export const setupStore = () => {
-  return configureStore({
-    reducer: rootReducer
-  });
-}
+export default store;
