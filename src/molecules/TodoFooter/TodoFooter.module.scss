@@ -19,6 +19,9 @@
 @media (max-width: 768px) {
 	.todoFooter {
 		flex-direction: column;
-    align-items: flex-start;
+
+    > * {
+      align-self: flex-start;
+    }
 	}
 }
