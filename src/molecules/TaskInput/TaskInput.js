@@ -5,7 +5,7 @@ import styles from "./TaskInput.module.scss";
 const TaskInput = ({ onEnterTask }) => {
 	return (
 		<div>
-			<CheckBoxInput disabled/>
+			<CheckBoxInput disabled />
 			<TextInput
 				className={styles.newTaskInput}
 				placeholder="Please enter a new task and click Enter to save"
@@ -13,6 +13,6 @@ const TaskInput = ({ onEnterTask }) => {
 			/>
 		</div>
 	);
-}
+};
 
 export default TaskInput;

@@ -2,26 +2,26 @@
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
- 
-  .totalCount {
-    color: grey;
-    font-size: 14px;
-    width: 125px;
-  }
- 
-  .buttonsContainer {
-    > * {
-      margin-right: 10px;
-    }
-  }
+
+	.totalCount {
+		color: grey;
+		font-size: 14px;
+		width: 125px;
+	}
+
+	.buttonsContainer {
+		> * {
+			margin-right: 10px;
+		}
+	}
 }
 
 @media (max-width: 768px) {
 	.todoFooter {
 		flex-direction: column;
 
-    > * {
-      align-self: flex-start;
-    }
+		> * {
+			align-self: flex-start;
+		}
 	}
 }

@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +46,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-plugin-react": "^7.32.2",
     "gh-pages": "^5.0.0",
     "sass": "^1.62.1"
   }

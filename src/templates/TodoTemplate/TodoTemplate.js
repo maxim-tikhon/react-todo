@@ -22,7 +22,7 @@ const TodoTemplate = ({
 		const newTask = {
 			id: uuidv4(),
 			description,
-			completed: false,
+			completed: false
 		};
 
 		onAddTask(newTask);
@@ -39,25 +39,24 @@ const TodoTemplate = ({
 					<TaskInput onEnterTask={addNewTask} />
 				</Card>
 
-				{tasks?.length > 0 && 
-						<Card>
-							{filteredTasks?.length > 0 ? filteredTasks.map((task) => (
-								<TaskItem
-									task={task}
-									key={task.id}
-									onDeleteTask={onDeleteTask}
-									onCheckTask={onCheckTask}
-								/>
-							)) : <div>There are no tasks matching the filter</div>}
-							<TodoFooter
-								numberOfActiveTasks={numberOfActiveTasks}
-								filter={filter}
-								onChangeFilter={onChangeFilter}
-								onClearCompletedTasks={onClearCompletedTasks}
-							/>
-						</Card>	
-				}
-						
+				{tasks?.length > 0 && (
+					<Card>
+						{filteredTasks?.length > 0 ? (
+							filteredTasks.map((task) => (
+								<TaskItem task={task} key={task.id} onDeleteTask={onDeleteTask} onCheckTask={onCheckTask} />
+							))
+						) : (
+							<div>There are no tasks matching the filter</div>
+						)}
+						<TodoFooter
+							numberOfActiveTasks={numberOfActiveTasks}
+							filter={filter}
+							onChangeFilter={onChangeFilter}
+							onClearCompletedTasks={onClearCompletedTasks}
+						/>
+					</Card>
+				)}
+
 				{tasks?.length > 1 && <div className={styles.todoNote}>Drag and drop to reoder list</div>}
 			</section>
 		</div>

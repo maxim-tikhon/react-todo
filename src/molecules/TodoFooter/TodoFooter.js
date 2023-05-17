@@ -4,15 +4,23 @@ import styles from "./TodoFooter.module.scss";
 const TodoFooter = ({ numberOfActiveTasks, filter, onChangeFilter, onClearCompletedTasks }) => {
 	return (
 		<div className={styles.todoFooter}>
-			{
-				numberOfActiveTasks > 0
-					? <span className={styles.totalCount}>{numberOfActiveTasks} {numberOfActiveTasks === 1 ? "task" : "tasks"} left</span>
-					: <span className={styles.totalCount}>All tasks completed</span>
-			}
+			{numberOfActiveTasks > 0 ? (
+				<span className={styles.totalCount}>
+					{numberOfActiveTasks} {numberOfActiveTasks === 1 ? "task" : "tasks"} left
+				</span>
+			) : (
+				<span className={styles.totalCount}>All tasks completed</span>
+			)}
 			<div className={styles.buttonsContainer}>
-				<LinkButton isActive={filter==="all"} onClick={() => onChangeFilter("all")}>All</LinkButton>
-				<LinkButton isActive={filter==="active"} onClick={() => onChangeFilter("active")}>Active</LinkButton>
-				<LinkButton isActive={filter==="completed"} onClick={() => onChangeFilter("completed")}>Completed</LinkButton>
+				<LinkButton isActive={filter === "all"} onClick={() => onChangeFilter("all")}>
+					All
+				</LinkButton>
+				<LinkButton isActive={filter === "active"} onClick={() => onChangeFilter("active")}>
+					Active
+				</LinkButton>
+				<LinkButton isActive={filter === "completed"} onClick={() => onChangeFilter("completed")}>
+					Completed
+				</LinkButton>
 			</div>
 			<LinkButton onClick={onClearCompletedTasks}>Clear Completed</LinkButton>
 		</div>

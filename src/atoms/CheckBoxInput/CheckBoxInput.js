@@ -6,7 +6,7 @@ const CheckBoxInput = ({ disabled, checked, onCheck }) => {
 			type="checkbox"
 			disabled={disabled}
 			checked={checked}
-			onChange={e => onCheck(e.target.checked)}
+			onChange={(e) => onCheck(e.target.checked)}
 			className={styles.customCheckbox}
 		/>
 	);
