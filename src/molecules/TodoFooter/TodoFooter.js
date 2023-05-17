@@ -1,4 +1,5 @@
 import LinkButton from "../../atoms/LinkButton/LinkButton";
+import { FILTER } from "../../utils/constants";
 import styles from "./TodoFooter.module.scss";
 
 const TodoFooter = ({ numberOfActiveTasks, filter, onChangeFilter, onClearCompletedTasks }) => {
@@ -12,13 +13,13 @@ const TodoFooter = ({ numberOfActiveTasks, filter, onChangeFilter, onClearComple
 				<span className={styles.totalCount}>All tasks completed</span>
 			)}
 			<div className={styles.buttonsContainer}>
-				<LinkButton isActive={filter === "all"} onClick={() => onChangeFilter("all")}>
+				<LinkButton isActive={filter === FILTER.ALL} onClick={() => onChangeFilter(FILTER.ALL)}>
 					All
 				</LinkButton>
-				<LinkButton isActive={filter === "active"} onClick={() => onChangeFilter("active")}>
+				<LinkButton isActive={filter === FILTER.ACTIVE} onClick={() => onChangeFilter(FILTER.ACTIVE)}>
 					Active
 				</LinkButton>
-				<LinkButton isActive={filter === "completed"} onClick={() => onChangeFilter("completed")}>
+				<LinkButton isActive={filter === FILTER.COMPLETED} onClick={() => onChangeFilter(FILTER.COMPLETED)}>
 					Completed
 				</LinkButton>
 			</div>
