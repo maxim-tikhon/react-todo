@@ -4,8 +4,20 @@ import TaskItem from "../../molecules/TaskItem/TaskItem";
 import TodoFooter from "../../molecules/TodoFooter/TodoFooter";
 import Card from "../../organisms/Card/Card";
 import styles from "./TodoTemplate.module.scss";
+import taskFilter from "../../utils/tasksFilter";
 
-const TodoTemplate = ({ tasks, onAddTask, onDeleteTask, onCheckTask }) => {
+const TodoTemplate = ({
+	tasks,
+	filter,
+	onAddTask,
+	onDeleteTask,
+	onCheckTask,
+	onChangeFilter,
+	onClearCompletedTasks
+}) => {
+	const filteredTasks = taskFilter.filterTasks(tasks, filter);
+	const numberOfActiveTasks = tasks?.filter((task) => !task.completed)?.length;
+
 	const addNewTask = (description) => {
 		const newTask = {
 			id: uuidv4(),
@@ -27,23 +39,26 @@ const TodoTemplate = ({ tasks, onAddTask, onDeleteTask, onCheckTask }) => {
 					<TaskInput onEnterTask={addNewTask} />
 				</Card>
 
-				{tasks?.length > 0 && (
-					<>
+				{tasks?.length > 0 && 
 						<Card>
-							{tasks.map((task) => (
+							{filteredTasks?.length > 0 ? filteredTasks.map((task) => (
 								<TaskItem
 									task={task}
 									key={task.id}
 									onDeleteTask={onDeleteTask}
 									onCheckTask={onCheckTask}
 								/>
-							))}
-							<TodoFooter />
-						</Card>
-
-						<div className={styles.todoNote}>Drag and drop to reoder list</div>
-					</>
-				)}
+							)) : <div>There are no tasks matching the filter</div>}
+							<TodoFooter
+								numberOfActiveTasks={numberOfActiveTasks}
+								filter={filter}
+								onChangeFilter={onChangeFilter}
+								onClearCompletedTasks={onClearCompletedTasks}
+							/>
+						</Card>	
+				}
+						
+				{tasks?.length > 1 && <div className={styles.todoNote}>Drag and drop to reoder list</div>}
 			</section>
 		</div>
 	);

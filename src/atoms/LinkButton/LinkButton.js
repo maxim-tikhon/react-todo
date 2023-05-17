@@ -6,7 +6,7 @@ const LinkButton = ({ children, isActive, ...props }) => {
     : styles.linkButton;
 
   return (
-    <button {...props} className={className}>
+    <button className={className} {...props}>
       {children}
     </button>
   );

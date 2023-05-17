@@ -1,46 +1,35 @@
 import TodoTemplate from "../../templates/TodoTemplate/TodoTemplate";
 import { useSelector, useDispatch } from "react-redux";
-import { taskAdded, taskDeleted, taskChecked } from "../../store/todoSlice";
+import {
+	taskAdded,
+	taskDeleted,
+	taskChecked,
+	filterChanged,
+	completedTasksCleared
+} from "../../store/todoSlice";
 
 const TodoPage = () => {
-	const tasks = useSelector(state => state.todo.tasks);
+	const tasks = useSelector((state) => state.todo.tasks);
+	const filter = useSelector((state) => state.todo.filter);
+
 	const dispatch = useDispatch();
 
 	const addTask = (task) => dispatch(taskAdded(task));
 	const deleteTask = (id) => dispatch(taskDeleted(id));
 	const checkTask = (task) => dispatch(taskChecked(task));
-	// the same for other actions
-
-  // const tasks = [
-	// 	{
-	// 		id: 1,
-	// 		description: "Read React documentation",
-	// 		completed: true,
-	// 	},
-	// 	{
-	// 		id: 2,
-	// 		description: "Complete React course",
-	// 		completed: false,
-	// 	},
-	// 	{
-	// 		id: 3,
-	// 		description: "Learn English",
-	// 		completed: false,
-	// 	},
-	// 	{
-	// 		id: 4,
-	// 		description: "Listen to music",
-	// 		completed: false,
-	// 	},
-	// 	{
-	// 		id: 5,
-	// 		description: "Cook a dinner for family",
-	// 		completed: false,
-	// 	},
-	// ];
+	const changeFilter = (filter) => dispatch(filterChanged(filter));
+	const clearCompletedTasks = () => dispatch(completedTasksCleared());
 
 	return (
-		<TodoTemplate tasks={tasks} onAddTask={addTask} onDeleteTask={deleteTask} onCheckTask={checkTask} />
+		<TodoTemplate
+			tasks={tasks}
+			filter={filter}
+			onAddTask={addTask}
+			onDeleteTask={deleteTask}
+			onCheckTask={checkTask}
+			onChangeFilter={changeFilter}
+			onClearCompletedTasks={clearCompletedTasks}
+		/>
 	);
 };
 

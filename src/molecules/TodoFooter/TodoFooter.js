@@ -1,16 +1,20 @@
 import LinkButton from "../../atoms/LinkButton/LinkButton";
 import styles from "./TodoFooter.module.scss";
 
-const TodoFooter = () => {
+const TodoFooter = ({ numberOfActiveTasks, filter, onChangeFilter, onClearCompletedTasks }) => {
 	return (
 		<div className={styles.todoFooter}>
-			<span className={styles.totalCount}>4 items left</span>
+			{
+				numberOfActiveTasks > 0
+					? <span className={styles.totalCount}>{numberOfActiveTasks} {numberOfActiveTasks === 1 ? "task" : "tasks"} left</span>
+					: <span className={styles.totalCount}>All tasks completed</span>
+			}
 			<div className={styles.buttonsContainer}>
-				<LinkButton isActive={true}>All</LinkButton>
-				<LinkButton>Active</LinkButton>
-				<LinkButton>Completed</LinkButton>
+				<LinkButton isActive={filter==="all"} onClick={() => onChangeFilter("all")}>All</LinkButton>
+				<LinkButton isActive={filter==="active"} onClick={() => onChangeFilter("active")}>Active</LinkButton>
+				<LinkButton isActive={filter==="completed"} onClick={() => onChangeFilter("completed")}>Completed</LinkButton>
 			</div>
-			<LinkButton>Clear Completed</LinkButton>
+			<LinkButton onClick={onClearCompletedTasks}>Clear Completed</LinkButton>
 		</div>
 	);
 };
