@@ -1,13 +1,13 @@
-import LinkButton from "../../atoms/LinkButton/LinkButton";
-import { FILTER } from "../../utils/constants";
-import styles from "./TodoFooter.module.scss";
+import LinkButton from '../../atoms/LinkButton/LinkButton';
+import { FILTER } from '../../utils/constants';
+import styles from './TodoFooter.module.scss';
 
-const TodoFooter = ({ numberOfActiveTasks, filter, onChangeFilter, onClearCompletedTasks }) => {
+function TodoFooter({ numberOfActiveTasks, filter, onChangeFilter, onClearCompletedTasks }) {
 	return (
 		<div className={styles.todoFooter}>
 			{numberOfActiveTasks > 0 ? (
 				<span className={styles.totalCount}>
-					{numberOfActiveTasks} {numberOfActiveTasks === 1 ? "task" : "tasks"} left
+					{numberOfActiveTasks} {numberOfActiveTasks === 1 ? 'task' : 'tasks'} left
 				</span>
 			) : (
 				<span className={styles.totalCount}>All tasks completed</span>
@@ -26,6 +26,6 @@ const TodoFooter = ({ numberOfActiveTasks, filter, onChangeFilter, onClearComple
 			<LinkButton onClick={onClearCompletedTasks}>Clear Completed</LinkButton>
 		</div>
 	);
-};
+}
 
 export default TodoFooter;

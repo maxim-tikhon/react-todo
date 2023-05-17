@@ -1,13 +1,13 @@
-import { useRef } from "react";
-import styles from "./TextInput.module.scss";
+import { useRef } from 'react';
+import styles from './TextInput.module.scss';
 
-const TextInput = ({ className, placeholder, onEnter }) => {
+function TextInput({ className, placeholder, onEnter }) {
 	const inputRef = useRef(null);
 
 	const handlePress = (e) => {
-		if (e.key === "Enter") {
+		if (e.key === 'Enter') {
 			onEnter(e.target.value);
-			inputRef.current.value = "";
+			inputRef.current.value = '';
 		}
 	};
 
@@ -20,6 +20,6 @@ const TextInput = ({ className, placeholder, onEnter }) => {
 			onKeyDown={handlePress}
 		/>
 	);
-};
+}
 
 export default TextInput;

@@ -1,4 +1,4 @@
-import { FILTER } from "./constants";
+import { FILTER } from './constants';
 
 const taskFilter = {
 	filterTasks(tasks, filter) {
@@ -12,7 +12,7 @@ const taskFilter = {
 			default:
 				return tasks;
 		}
-	}
+	},
 };
 
 export default taskFilter;

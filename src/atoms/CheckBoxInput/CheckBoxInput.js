@@ -1,6 +1,6 @@
-import styles from "./CheckBoxInput.module.scss";
+import styles from './CheckBoxInput.module.scss';
 
-const CheckBoxInput = ({ disabled, checked, onCheck }) => {
+function CheckBoxInput({ disabled, checked, onCheck }) {
 	return (
 		<input
 			type="checkbox"
@@ -10,6 +10,6 @@ const CheckBoxInput = ({ disabled, checked, onCheck }) => {
 			className={styles.customCheckbox}
 		/>
 	);
-};
+}
 
 export default CheckBoxInput;

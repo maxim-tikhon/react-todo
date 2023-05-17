@@ -1,19 +1,19 @@
-import TodoTemplate from "../../templates/TodoTemplate/TodoTemplate";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import TodoTemplate from '../../templates/TodoTemplate/TodoTemplate';
 import {
 	addTask,
 	deleteTask,
 	checkTask,
 	changeFilter,
 	clearCompletedTasks,
-	loadTasks
-} from "../../store/slices/todoSlice";
-import { useEffect } from "react";
-import { TODO_STOARGE_NAME } from "../../utils/constants";
+	loadTasks,
+} from '../../store/slices/todoSlice';
+import { TODO_STOARGE_NAME } from '../../utils/constants';
 
-const TodoPage = () => {
+function TodoPage() {
 	const tasks = useSelector((state) => state.todo.tasks);
-	const filter = useSelector((state) => state.todo.filter);
+	const currentFilter = useSelector((state) => state.todo.filter);
 
 	const dispatch = useDispatch();
 
@@ -21,15 +21,15 @@ const TodoPage = () => {
 		const storedTasks = localStorage.getItem(TODO_STOARGE_NAME);
 
 		if (storedTasks) {
-			const tasks = JSON.parse(storedTasks);
-			dispatch(loadTasks(tasks));
+			const todos = JSON.parse(storedTasks);
+			dispatch(loadTasks(todos));
 		}
 	}, []);
 
 	return (
 		<TodoTemplate
 			tasks={tasks}
-			filter={filter}
+			filter={currentFilter}
 			onAddTask={(task) => dispatch(addTask(task))}
 			onDeleteTask={(id) => dispatch(deleteTask(id))}
 			onCheckTask={(task) => dispatch(checkTask(task))}
@@ -37,6 +37,6 @@ const TodoPage = () => {
 			onClearCompletedTasks={() => dispatch(clearCompletedTasks())}
 		/>
 	);
-};
+}
 
 export default TodoPage;

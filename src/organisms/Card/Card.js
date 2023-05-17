@@ -1,7 +1,7 @@
-import styles from "./Card.module.scss";
+import styles from './Card.module.scss';
 
-const Card = ({ children }) => {
+function Card({ children }) {
 	return <div className={styles.card}>{children}</div>;
-};
+}
 
 export default Card;

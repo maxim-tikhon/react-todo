@@ -1,20 +1,12 @@
-import { v4 as uuidv4 } from "uuid";
-import TaskInput from "../../molecules/TaskInput/TaskInput";
-import TaskItem from "../../molecules/TaskItem/TaskItem";
-import TodoFooter from "../../molecules/TodoFooter/TodoFooter";
-import Card from "../../organisms/Card/Card";
-import styles from "./TodoTemplate.module.scss";
-import taskFilter from "../../utils/tasksFilter";
+import { v4 as uuidv4 } from 'uuid';
+import TaskInput from '../../molecules/TaskInput/TaskInput';
+import TaskItem from '../../molecules/TaskItem/TaskItem';
+import TodoFooter from '../../molecules/TodoFooter/TodoFooter';
+import Card from '../../organisms/Card/Card';
+import styles from './TodoTemplate.module.scss';
+import taskFilter from '../../utils/tasksFilter';
 
-const TodoTemplate = ({
-	tasks,
-	filter,
-	onAddTask,
-	onDeleteTask,
-	onCheckTask,
-	onChangeFilter,
-	onClearCompletedTasks
-}) => {
+function TodoTemplate({ tasks, filter, onAddTask, onDeleteTask, onCheckTask, onChangeFilter, onClearCompletedTasks }) {
 	const filteredTasks = taskFilter.filterTasks(tasks, filter);
 	const numberOfActiveTasks = tasks?.filter((task) => !task.completed)?.length;
 
@@ -22,7 +14,7 @@ const TodoTemplate = ({
 		const newTask = {
 			id: uuidv4(),
 			description,
-			completed: false
+			completed: false,
 		};
 
 		onAddTask(newTask);
@@ -61,6 +53,6 @@ const TodoTemplate = ({
 			</section>
 		</div>
 	);
-};
+}
 
 export default TodoTemplate;

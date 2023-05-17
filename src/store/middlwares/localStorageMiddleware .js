@@ -1,5 +1,5 @@
-import { TODO_STOARGE_NAME } from "../../utils/constants";
-import { addTask, deleteTask, checkTask, clearCompletedTasks } from "../slices/todoSlice";
+import { TODO_STOARGE_NAME } from '../../utils/constants';
+import { addTask, deleteTask, checkTask, clearCompletedTasks } from '../slices/todoSlice';
 
 const localStorageMiddleware = (store) => (next) => (action) => {
 	const result = next(action);
@@ -10,7 +10,7 @@ const localStorageMiddleware = (store) => (next) => (action) => {
 		action.type === checkTask.type ||
 		action.type === clearCompletedTasks.type
 	) {
-		const tasks = store.getState().todo.tasks;
+		const { tasks } = store.getState().todo;
 		localStorage.setItem(TODO_STOARGE_NAME, JSON.stringify(tasks));
 	}
 

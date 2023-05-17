@@ -1,8 +1,8 @@
-import CheckBoxInput from "../../atoms/CheckBoxInput/CheckBoxInput";
-import TextInput from "../../atoms/TextInput/TextInput";
-import styles from "./TaskInput.module.scss";
+import CheckBoxInput from '../../atoms/CheckBoxInput/CheckBoxInput';
+import TextInput from '../../atoms/TextInput/TextInput';
+import styles from './TaskInput.module.scss';
 
-const TaskInput = ({ onEnterTask }) => {
+function TaskInput({ onEnterTask }) {
 	return (
 		<div>
 			<CheckBoxInput disabled />
@@ -13,6 +13,6 @@ const TaskInput = ({ onEnterTask }) => {
 			/>
 		</div>
 	);
-};
+}
 
 export default TaskInput;

@@ -1,13 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { FILTER } from "../../utils/constants";
+import { createSlice } from '@reduxjs/toolkit';
+import { FILTER } from '../../utils/constants';
 
 const initialState = {
 	tasks: [],
-	filter: FILTER.ALL
+	filter: FILTER.ALL,
 };
 
 export const todoSlice = createSlice({
-	name: "todo",
+	name: 'todo',
 	initialState,
 	reducers: {
 		addTask: (state, action) => {
@@ -32,14 +32,12 @@ export const todoSlice = createSlice({
 		},
 		loadTasks: (state, action) => {
 			state.tasks = action.payload;
-		}
-	}
+		},
+	},
 });
 
 export const { addTask, deleteTask, checkTask, changeFilter, clearCompletedTasks, loadTasks } = todoSlice.actions;
 
-export const initTasks = () => {
-	return { type: "todo/initTasks" };
-};
+export const initTasks = () => ({ type: 'todo/initTasks' });
 
 export default todoSlice.reducer;

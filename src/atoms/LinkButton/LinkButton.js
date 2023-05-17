@@ -1,13 +1,13 @@
-import styles from "./LinkButton.module.scss";
+import styles from './LinkButton.module.scss';
 
-const LinkButton = ({ children, isActive, ...props }) => {
+function LinkButton({ children, isActive, onClick }) {
 	const className = isActive ? `${styles.linkButton} ${styles.active}` : styles.linkButton;
 
 	return (
-		<button className={className} {...props}>
+		<button type="button" className={className} onClick={onClick}>
 			{children}
 		</button>
 	);
-};
+}
 
 export default LinkButton;
