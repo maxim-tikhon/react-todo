@@ -7,6 +7,8 @@ const TodoPage = () => {
 	const dispatch = useDispatch();
 
 	const addTask = (task) => dispatch(taskAdded(task));
+	const deleteTask = (id) => dispatch(taskDeleted(id));
+	const checkTask = (task) => dispatch(taskChecked(task));
 	// the same for other actions
 
   // const tasks = [
@@ -38,7 +40,7 @@ const TodoPage = () => {
 	// ];
 
 	return (
-		<TodoTemplate tasks={tasks} onAddTask={addTask} />
+		<TodoTemplate tasks={tasks} onAddTask={addTask} onDeleteTask={deleteTask} onCheckTask={checkTask} />
 	);
 };
 

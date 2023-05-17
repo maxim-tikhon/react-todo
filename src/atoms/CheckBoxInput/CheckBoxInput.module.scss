@@ -8,7 +8,7 @@
   cursor: pointer;
   position: relative;
 
-  &:hover {
+  &:not(:disabled):not(:checked):hover {
     border: 2px solid transparent;
     background-image: linear-gradient(white, white),
       radial-gradient(circle at top left, #e983dd80, #579ebfcc);
@@ -26,6 +26,11 @@
     &::before {
       opacity: 1;
     }
+  }
+
+  &:disabled {
+    border: 2px solid lightgrey;
+    cursor: not-allowed;
   }
 
   &::before {

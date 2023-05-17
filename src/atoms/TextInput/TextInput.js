@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import styles from "./TextInput.module.scss";
 
-const TextInput = ({ className, onEnter }) => {
+const TextInput = ({ className, placeholder, onEnter }) => {
   const inputRef = useRef(null);
 
   const handlePress = e => {
@@ -14,6 +14,7 @@ const TextInput = ({ className, onEnter }) => {
 	return <input
     type="text"
     className={`${styles.textInput} ${className}`}
+    placeholder={placeholder}
     ref={inputRef}
     onKeyDown={handlePress}
   />;
