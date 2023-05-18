@@ -48,8 +48,6 @@ function TodoTemplate({ tasks, filter, onAddTask, onDeleteTask, onCheckTask, onC
 						/>
 					</Card>
 				)}
-
-				{tasks?.length > 1 && <div className={styles.todoNote}>Drag and drop to reoder list</div>}
 			</section>
 		</div>
 	);

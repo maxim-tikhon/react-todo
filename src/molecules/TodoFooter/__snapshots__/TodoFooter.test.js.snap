@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoFooter renders correctly 1`] = `
+<div
+  className="todoFooter"
+>
+  <span
+    className="totalCount"
+  >
+    3
+     
+    tasks
+     left
+  </span>
+  <div
+    className="buttonsContainer"
+  >
+    <button
+      className="linkButton"
+      onClick={[Function]}
+      type="button"
+    >
+      All
+    </button>
+    <button
+      className="linkButton active"
+      onClick={[Function]}
+      type="button"
+    >
+      Active
+    </button>
+    <button
+      className="linkButton"
+      onClick={[Function]}
+      type="button"
+    >
+      Completed
+    </button>
+  </div>
+  <button
+    className="linkButton"
+    type="button"
+  >
+    Clear Completed
+  </button>
+</div>
+`;
