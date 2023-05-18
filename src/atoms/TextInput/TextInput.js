@@ -5,7 +5,7 @@ function TextInput({ className, placeholder, onEnter }) {
 	const inputRef = useRef(null);
 
 	const handlePress = (e) => {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' && e.target.value) {
 			onEnter(e.target.value);
 			inputRef.current.value = '';
 		}
