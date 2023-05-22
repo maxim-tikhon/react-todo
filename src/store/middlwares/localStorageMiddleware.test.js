@@ -56,7 +56,6 @@ describe('localStorageMiddleware', () => {
 		store.dispatch(checkTask({ id: '1', checked: false }));
 
 		const storedTasks = JSON.parse(localStorage.getItem(TODO_STOARGE_NAME));
-		console.log(storedTasks);
 
 		expect(storedTasks[0].completed).toBe(false);
 	});
