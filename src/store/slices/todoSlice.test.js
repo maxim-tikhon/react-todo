@@ -1,6 +1,13 @@
 import { FILTER } from '../../utils/constants';
-import todoReducer, { addTask, deleteTask, checkTask, changeFilter, clearCompletedTasks, loadTasks } from './todoSlice';
-
+import todoReducer, {
+	addTask,
+	deleteTask,
+	checkTask,
+	changeFilter,
+	clearCompletedTasks,
+	loadTasks,
+	reoderTasks,
+} from './todoSlice';
 
 describe('todoSlice', () => {
 	it('should handle addTask', () => {
@@ -80,5 +87,20 @@ describe('todoSlice', () => {
 
 		expect(newState.tasks).toHaveLength(1);
 		expect(newState.tasks[0].description).toBe('Task 1');
+	});
+
+	it('should handle reoderTasks', () => {
+		const initialState = {
+			tasks: [
+				{ id: 1, description: 'Task 1', completed: true },
+				{ id: 2, description: 'Task 2', completed: false },
+			],
+			filter: FILTER.ALL,
+		};
+
+		const newState = todoReducer(initialState, reoderTasks({ fromId: 1, toId: 2 }));
+
+		expect(newState.tasks[0].description).toBe('Task 2');
+		expect(newState.tasks[1].description).toBe('Task 1');
 	});
 });

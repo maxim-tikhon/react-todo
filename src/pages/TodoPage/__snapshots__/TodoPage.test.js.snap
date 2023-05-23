@@ -15,27 +15,39 @@ exports[`TodoPage renders correctly 1`] = `
       </h1>
     </header>
     <div
-      className="card"
+      className="card single"
     >
-      <div>
-        <input
-          className="customCheckbox"
-          disabled={true}
-          onChange={[Function]}
-          type="checkbox"
-        />
-        <input
-          className="textInput newTaskInput"
-          onKeyDown={[Function]}
-          placeholder="Please enter a new task and click Enter to save"
-          type="text"
-        />
-      </div>
+      <input
+        className="customCheckbox"
+        disabled={true}
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <input
+        className="textInput newTaskInput"
+        onKeyDown={[Function]}
+        placeholder="Please enter a new task and click Enter to save"
+        type="text"
+      />
     </div>
     <div
-      className="card"
+      className="todoList"
     >
-      <div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled={false}
+        aria-roledescription="sortable"
+        className="card"
+        onPointerDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "transform": undefined,
+            "transition": undefined,
+          }
+        }
+        tabIndex={0}
+      >
         <input
           checked={false}
           className="customCheckbox"
@@ -44,6 +56,7 @@ exports[`TodoPage renders correctly 1`] = `
         />
         <span
           className="task"
+          data-testid="task"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
@@ -64,7 +77,21 @@ exports[`TodoPage renders correctly 1`] = `
           />
         </svg>
       </div>
-      <div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled={false}
+        aria-roledescription="sortable"
+        className="card"
+        onPointerDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "transform": undefined,
+            "transition": undefined,
+          }
+        }
+        tabIndex={0}
+      >
         <input
           checked={true}
           className="customCheckbox"
@@ -73,6 +100,7 @@ exports[`TodoPage renders correctly 1`] = `
         />
         <span
           className="task completed"
+          data-testid="task"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
@@ -94,49 +122,92 @@ exports[`TodoPage renders correctly 1`] = `
         </svg>
       </div>
       <div
-        className="todoFooter"
+        id="DndDescribedBy-0"
+        style={
+          Object {
+            "display": "none",
+          }
+        }
       >
-        <span
-          className="totalCount"
-        >
-          1
-           
-          task
-           left
-        </span>
+        
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+      </div>
+      <div
+        aria-atomic={true}
+        aria-live="assertive"
+        id="DndLiveRegion-0"
+        role="status"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(100%)",
+            "height": 1,
+            "margin": -1,
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "fixed",
+            "whiteSpace": "nowrap",
+            "width": 1,
+          }
+        }
+      />
+      <div
+        className="card"
+      >
         <div
-          className="buttonsContainer"
+          className="todoFooter"
         >
-          <button
-            className="linkButton active"
-            onClick={[Function]}
-            type="button"
+          <span
+            className="totalCount"
           >
-            All
-          </button>
+            1
+             
+            task
+             left
+          </span>
+          <div
+            className="buttonsContainer"
+          >
+            <button
+              className="linkButton active"
+              onClick={[Function]}
+              type="button"
+            >
+              All
+            </button>
+            <button
+              className="linkButton"
+              onClick={[Function]}
+              type="button"
+            >
+              Active
+            </button>
+            <button
+              className="linkButton"
+              onClick={[Function]}
+              type="button"
+            >
+              Completed
+            </button>
+          </div>
           <button
             className="linkButton"
             onClick={[Function]}
             type="button"
           >
-            Active
-          </button>
-          <button
-            className="linkButton"
-            onClick={[Function]}
-            type="button"
-          >
-            Completed
+            Clear Completed
           </button>
         </div>
-        <button
-          className="linkButton"
-          onClick={[Function]}
-          type="button"
-        >
-          Clear Completed
-        </button>
       </div>
+    </div>
+    <div
+      className="todoNote"
+    >
+      Drag and drop to reoder list
     </div>
   </section>
 </div>

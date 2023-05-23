@@ -33,11 +33,17 @@ export const todoSlice = createSlice({
 		loadTasks: (state, action) => {
 			state.tasks = action.payload;
 		},
+		reoderTasks: (state, action) => {
+			const fromIndex = state.tasks.findIndex((task) => task.id === action.payload.fromId);
+			const toIndex = state.tasks.findIndex((task) => task.id === action.payload.toId);
+			const element = state.tasks[fromIndex];
+			state.tasks.splice(fromIndex, 1);
+			state.tasks.splice(toIndex, 0, element);
+		},
 	},
 });
 
-export const { addTask, deleteTask, checkTask, changeFilter, clearCompletedTasks, loadTasks } = todoSlice.actions;
-
-export const initTasks = () => ({ type: 'todo/initTasks' });
+export const { addTask, deleteTask, checkTask, changeFilter, clearCompletedTasks, loadTasks, reoderTasks } =
+	todoSlice.actions;
 
 export default todoSlice.reducer;

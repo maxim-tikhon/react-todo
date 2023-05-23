@@ -15,22 +15,20 @@ exports[`App renders correctly 1`] = `
       </h1>
     </header>
     <div
-      className="card"
+      className="card single"
     >
-      <div>
-        <input
-          className="customCheckbox"
-          disabled={true}
-          onChange={[Function]}
-          type="checkbox"
-        />
-        <input
-          className="textInput newTaskInput"
-          onKeyDown={[Function]}
-          placeholder="Please enter a new task and click Enter to save"
-          type="text"
-        />
-      </div>
+      <input
+        className="customCheckbox"
+        disabled={true}
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <input
+        className="textInput newTaskInput"
+        onKeyDown={[Function]}
+        placeholder="Please enter a new task and click Enter to save"
+        type="text"
+      />
     </div>
   </section>
 </div>

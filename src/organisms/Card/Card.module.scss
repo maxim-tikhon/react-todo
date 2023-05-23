@@ -1,26 +1,12 @@
 .card {
-	margin-top: 1rem;
+	display: flex;
+	align-items: center;
 	width: 100%;
+	padding: 10px;
+	background-color: white;
+	border-radius: 5px;
 
-	> * {
-		display: flex;
-		align-items: center;
-		width: 100%;
-		padding: 10px;
-		background-color: white;
-
-		&:first-of-type {
-			border-top-left-radius: 5px;
-			border-top-right-radius: 5px;
-		}
-
-		&:last-of-type {
-			border-bottom-left-radius: 5px;
-			border-bottom-right-radius: 5px;
-		}
-
-		&:not(:last-of-type) {
-			border-bottom: 1px solid rgb(225, 223, 223);
-		}
+	&.single {
+		margin: 1rem 0;
 	}
 }

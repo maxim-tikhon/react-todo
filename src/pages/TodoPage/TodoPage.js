@@ -8,6 +8,7 @@ import {
 	changeFilter,
 	clearCompletedTasks,
 	loadTasks,
+	reoderTasks,
 } from '../../store/slices/todoSlice';
 import { TODO_STOARGE_NAME } from '../../utils/constants';
 
@@ -35,6 +36,7 @@ function TodoPage() {
 			onCheckTask={(task) => dispatch(checkTask(task))}
 			onChangeFilter={(filter) => dispatch(changeFilter(filter))}
 			onClearCompletedTasks={() => dispatch(clearCompletedTasks())}
+			onReoderTasks={({ fromId, toId }) => dispatch(reoderTasks({ fromId, toId }))}
 		/>
 	);
 }

@@ -4,14 +4,14 @@ import styles from './TaskInput.module.scss';
 
 function TaskInput({ onEnterTask }) {
 	return (
-		<div>
+		<>
 			<CheckBoxInput disabled />
 			<TextInput
 				className={styles.newTaskInput}
 				placeholder="Please enter a new task and click Enter to save"
 				onEnter={onEnterTask}
 			/>
-		</div>
+		</>
 	);
 }
 

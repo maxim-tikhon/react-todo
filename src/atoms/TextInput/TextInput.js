@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import classNames from 'classnames';
 import styles from './TextInput.module.scss';
 
 function TextInput({ className, placeholder, onEnter }) {
@@ -14,7 +15,7 @@ function TextInput({ className, placeholder, onEnter }) {
 	return (
 		<input
 			type="text"
-			className={`${styles.textInput} ${className}`}
+			className={classNames(styles.textInput, className)}
 			placeholder={placeholder}
 			ref={inputRef}
 			onKeyDown={handlePress}

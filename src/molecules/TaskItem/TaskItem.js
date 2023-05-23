@@ -10,7 +10,7 @@ function TaskItem({ task, onDeleteTask, onCheckTask }) {
 	};
 
 	return (
-		<div>
+		<>
 			<CheckBoxInput checked={task.completed} onCheck={(checked) => onCheckTask({ id: task.id, checked })} />
 			<span
 				data-testid="task"
@@ -23,7 +23,7 @@ function TaskItem({ task, onDeleteTask, onCheckTask }) {
 				{task.description}
 			</span>
 			<ClearIcon className={styles.deleteIcon} onClick={() => onDeleteTask(task.id)} />
-		</div>
+		</>
 	);
 }
 

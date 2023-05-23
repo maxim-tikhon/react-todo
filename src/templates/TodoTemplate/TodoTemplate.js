@@ -1,12 +1,24 @@
 import { v4 as uuidv4 } from 'uuid';
+import { DndContext, PointerSensor, closestCenter, useSensor, useSensors } from '@dnd-kit/core';
+import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import TaskInput from '../../molecules/TaskInput/TaskInput';
 import TaskItem from '../../molecules/TaskItem/TaskItem';
 import TodoFooter from '../../molecules/TodoFooter/TodoFooter';
 import Card from '../../organisms/Card/Card';
+import SortableCard from '../../organisms/SortableCard/SortableCard';
 import styles from './TodoTemplate.module.scss';
 import taskFilter from '../../utils/tasksFilter';
 
-function TodoTemplate({ tasks, filter, onAddTask, onDeleteTask, onCheckTask, onChangeFilter, onClearCompletedTasks }) {
+function TodoTemplate({
+	tasks,
+	filter,
+	onAddTask,
+	onDeleteTask,
+	onCheckTask,
+	onChangeFilter,
+	onClearCompletedTasks,
+	onReoderTasks,
+}) {
 	const filteredTasks = taskFilter.filterTasks(tasks, filter);
 	const numberOfActiveTasks = tasks?.filter((task) => !task.completed)?.length;
 
@@ -20,6 +32,21 @@ function TodoTemplate({ tasks, filter, onAddTask, onDeleteTask, onCheckTask, onC
 		onAddTask(newTask);
 	};
 
+	const sensors = useSensors(
+		useSensor(PointerSensor, {
+			activationConstraint: {
+				distance: 5,
+			},
+		})
+	);
+
+	const handleDtragEnd = ({ active, over }) => {
+		onReoderTasks({
+			fromId: active.id,
+			toId: over.id,
+		});
+	};
+
 	return (
 		<div className={styles.todoContainer}>
 			<section className={styles.todoSection}>
@@ -27,27 +54,37 @@ function TodoTemplate({ tasks, filter, onAddTask, onDeleteTask, onCheckTask, onC
 					<h1 className={styles.todoHeader}>TODO</h1>
 				</header>
 
-				<Card>
+				<Card single>
 					<TaskInput onEnterTask={addNewTask} />
 				</Card>
 
 				{tasks?.length > 0 && (
-					<Card>
+					<div className={styles.todoList}>
 						{filteredTasks?.length > 0 ? (
-							filteredTasks.map((task) => (
-								<TaskItem task={task} key={task.id} onDeleteTask={onDeleteTask} onCheckTask={onCheckTask} />
-							))
+							<DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDtragEnd}>
+								<SortableContext items={tasks} strategy={verticalListSortingStrategy}>
+									{filteredTasks.map((task) => (
+										<SortableCard key={task.id} id={task.id}>
+											<TaskItem task={task} onDeleteTask={onDeleteTask} onCheckTask={onCheckTask} />
+										</SortableCard>
+									))}
+								</SortableContext>
+							</DndContext>
 						) : (
-							<div>There are no tasks matching the filter</div>
+							<Card>There are no tasks matching the filter</Card>
 						)}
-						<TodoFooter
-							numberOfActiveTasks={numberOfActiveTasks}
-							filter={filter}
-							onChangeFilter={onChangeFilter}
-							onClearCompletedTasks={onClearCompletedTasks}
-						/>
-					</Card>
+						<Card>
+							<TodoFooter
+								numberOfActiveTasks={numberOfActiveTasks}
+								filter={filter}
+								onChangeFilter={onChangeFilter}
+								onClearCompletedTasks={onClearCompletedTasks}
+							/>
+						</Card>
+					</div>
 				)}
+
+				{filteredTasks?.length > 0 && <div className={styles.todoNote}>Drag and drop to reoder list</div>}
 			</section>
 		</div>
 	);
