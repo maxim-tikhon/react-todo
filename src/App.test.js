@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
 import App from './App';
+import store from './store/store';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  it('renders correctly', () => {
+    const output = renderer
+      .create(
+        <Provider store={store}>
+          <App />
+        </Provider>
+      )
+      .toJSON();
+    expect(output).toMatchSnapshot();
+  });
 });

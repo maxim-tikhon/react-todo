@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoTemplate renders correctly 1`] = `
+<div
+  className="todoContainer"
+>
+  <section
+    className="todoSection"
+  >
+    <header>
+      <h1
+        className="todoHeader"
+      >
+        TODO
+      </h1>
+    </header>
+    <div
+      className="card single"
+    >
+      <input
+        className="customCheckbox"
+        disabled={true}
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        className="label"
+      />
+      <input
+        className="textInput newTaskInput"
+        onKeyDown={[Function]}
+        placeholder="Please enter a new task and click Enter to save"
+        type="text"
+      />
+    </div>
+  </section>
+</div>
+`;

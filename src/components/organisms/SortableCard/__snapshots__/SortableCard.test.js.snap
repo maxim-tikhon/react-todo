@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortableCard renders correctly 1`] = `
+<div
+  aria-describedby=""
+  aria-disabled={false}
+  aria-pressed={true}
+  aria-roledescription="sortable"
+  className="card active"
+  role="button"
+  style={
+    Object {
+      "transform": undefined,
+      "transition": undefined,
+    }
+  }
+  tabIndex={0}
+>
+  Test
+</div>
+`;

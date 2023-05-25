@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskInput renders correctly 1`] = `
+Array [
+  <input
+    className="customCheckbox"
+    disabled={true}
+    onChange={[Function]}
+    type="checkbox"
+  />,
+  <label
+    className="label"
+  />,
+  <input
+    className="textInput newTaskInput"
+    onKeyDown={[Function]}
+    placeholder="Please enter a new task and click Enter to save"
+    type="text"
+  />,
+]
+`;

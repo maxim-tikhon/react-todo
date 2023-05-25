@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoPage renders correctly 1`] = `
+<div
+  className="todoContainer"
+>
+  <section
+    className="todoSection"
+  >
+    <header>
+      <h1
+        className="todoHeader"
+      >
+        TODO
+      </h1>
+    </header>
+    <div
+      className="card single"
+    >
+      <input
+        className="customCheckbox"
+        disabled={true}
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label
+        className="label"
+      />
+      <input
+        className="textInput newTaskInput"
+        onKeyDown={[Function]}
+        placeholder="Please enter a new task and click Enter to save"
+        type="text"
+      />
+    </div>
+    <div
+      className="todoList"
+    >
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled={false}
+        aria-roledescription="sortable"
+        className="card"
+        onPointerDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "transform": undefined,
+            "transition": undefined,
+          }
+        }
+        tabIndex={0}
+      >
+        <input
+          checked={false}
+          className="customCheckbox"
+          id="Task"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="label"
+          htmlFor="Task"
+        >
+          Task
+        </label>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium deleteIcon css-i4bv87-MuiSvgIcon-root"
+          data-testid="ClearIcon"
+          focusable="false"
+          onClick={[Function]}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+        </svg>
+      </div>
+      <div
+        aria-describedby="DndDescribedBy-0"
+        aria-disabled={false}
+        aria-roledescription="sortable"
+        className="card"
+        onPointerDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "transform": undefined,
+            "transition": undefined,
+          }
+        }
+        tabIndex={0}
+      >
+        <input
+          checked={true}
+          className="customCheckbox"
+          id="Task 2"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="label"
+          htmlFor="Task 2"
+        >
+          Task 2
+        </label>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium deleteIcon css-i4bv87-MuiSvgIcon-root"
+          data-testid="ClearIcon"
+          focusable="false"
+          onClick={[Function]}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+        </svg>
+      </div>
+      <div
+        id="DndDescribedBy-0"
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+      </div>
+      <div
+        aria-atomic={true}
+        aria-live="assertive"
+        id="DndLiveRegion-0"
+        role="status"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(100%)",
+            "height": 1,
+            "margin": -1,
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "fixed",
+            "whiteSpace": "nowrap",
+            "width": 1,
+          }
+        }
+      />
+      <div
+        className="card"
+      >
+        <div
+          className="todoFooter"
+        >
+          <span
+            className="totalCount"
+          >
+            1
+             
+            task
+             left
+          </span>
+          <div
+            className="buttonsContainer"
+          >
+            <button
+              className="linkButton active"
+              onClick={[Function]}
+              type="button"
+            >
+              All
+            </button>
+            <button
+              className="linkButton"
+              onClick={[Function]}
+              type="button"
+            >
+              Active
+            </button>
+            <button
+              className="linkButton"
+              onClick={[Function]}
+              type="button"
+            >
+              Completed
+            </button>
+          </div>
+          <button
+            className="linkButton"
+            onClick={[Function]}
+            type="button"
+          >
+            Clear Completed
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="todoNote"
+    >
+      Drag and drop to reoder list
+    </div>
+  </section>
+</div>
+`;

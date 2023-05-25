@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBoxInput renders correctly 1`] = `
+Array [
+  <input
+    checked={false}
+    className="customCheckbox"
+    onChange={[Function]}
+    type="checkbox"
+  />,
+  <label
+    className="label"
+  />,
+]
+`;
