@@ -4,14 +4,14 @@ import App from './App';
 import store from './store/store';
 
 describe('App', () => {
-	it('renders correctly', () => {
-		const output = renderer
-			.create(
-				<Provider store={store}>
-					<App />
-				</Provider>
-			)
-			.toJSON();
-		expect(output).toMatchSnapshot();
-	});
+  it('renders correctly', () => {
+    const output = renderer
+      .create(
+        <Provider store={store}>
+          <App />
+        </Provider>
+      )
+      .toJSON();
+    expect(output).toMatchSnapshot();
+  });
 });

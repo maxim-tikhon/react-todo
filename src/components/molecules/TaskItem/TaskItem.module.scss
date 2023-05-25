@@ -1,0 +1,9 @@
+.deleteIcon {
+  margin-left: auto;
+  cursor: pointer;
+  color: grey;
+
+  &:hover {
+    color: black;
+  }
+}

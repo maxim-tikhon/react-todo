@@ -23,6 +23,9 @@ exports[`TodoPage renders correctly 1`] = `
         onChange={[Function]}
         type="checkbox"
       />
+      <label
+        className="label"
+      />
       <input
         className="textInput newTaskInput"
         onKeyDown={[Function]}
@@ -51,19 +54,16 @@ exports[`TodoPage renders correctly 1`] = `
         <input
           checked={false}
           className="customCheckbox"
+          id="Task"
           onChange={[Function]}
           type="checkbox"
         />
-        <span
-          className="task"
-          data-testid="task"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex="0"
+        <label
+          className="label"
+          htmlFor="Task"
         >
           Task
-        </span>
+        </label>
         <svg
           aria-hidden={true}
           className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium deleteIcon css-i4bv87-MuiSvgIcon-root"
@@ -95,19 +95,16 @@ exports[`TodoPage renders correctly 1`] = `
         <input
           checked={true}
           className="customCheckbox"
+          id="Task 2"
           onChange={[Function]}
           type="checkbox"
         />
-        <span
-          className="task completed"
-          data-testid="task"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex="0"
+        <label
+          className="label"
+          htmlFor="Task 2"
         >
           Task 2
-        </span>
+        </label>
         <svg
           aria-hidden={true}
           className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium deleteIcon css-i4bv87-MuiSvgIcon-root"

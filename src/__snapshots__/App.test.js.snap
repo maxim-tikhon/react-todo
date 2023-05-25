@@ -23,6 +23,9 @@ exports[`App renders correctly 1`] = `
         onChange={[Function]}
         type="checkbox"
       />
+      <label
+        className="label"
+      />
       <input
         className="textInput newTaskInput"
         onKeyDown={[Function]}
